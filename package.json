@@ -1,0 +1,21 @@
+{
+  "name": "max-host",
+  "private": true,
+  "version": "0.1.1",
+  "description": "Стенд хоста мини-приложений MAX: web, desktop, Android, iOS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.6",
+    "@vitejs/plugin-basic-ssl": "^2.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
