@@ -21,11 +21,17 @@ function devLanUrls(port: number): string[] {
 const devPort = 4173;
 const lanUrls = devLanUrls(devPort);
 
+// GitHub Pages подставляет сайт по пути `/<repo>/`.
+// В dev/prod без окружения используем `/`.
+const githubRepoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+const pageBase = githubRepoName ? `/${githubRepoName}/` : '/';
+
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
     __DEV_LAN_URLS__: JSON.stringify(lanUrls),
   },
+  base: pageBase,
   plugins: [basicSsl()],
   server: {
     host: true,
